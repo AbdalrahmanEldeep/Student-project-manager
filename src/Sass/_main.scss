@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+// ====== VARIABLES =====>
+$main-color: #f5f6fa;
+$gray-color-f1: #bbbbbb;
+$gray-color-f2: #e7e6e7;
+$dark-color-f1: #40739e;
+$dark-color-f2: #2f3640;
+$white-color: #fff;
+$red-color-dark: rgb(165, 15, 15);
+$green-color: #273c75;
+$light-color: lightblue;
+$warn-color: #4b6584;
+
+// $main-color: #cfd7e6;
+// $dark-color-f1:  #2c3e50;
+// $dark-color-f2: #2f3640;
+// $green-color: #2f3542;
+// ====== VARIABLES =====>
+
+// ====== REST-DEFULT =====>
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  transition: all 0.4s ease;
+}
+*::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 100px;
+}
+*::-webkit-scrollbar-track-piece {
+  background-color: var(--dark-color-f1, $dark-color-f1);
+  border-radius: 100px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--white-color, $white-color);
+  border-radius: 100px;
+}
+// ====== REST-DEFULT =====>
+
+// ====== GOLOBAL-STYLES =====>
+button {
+  padding: 10px 30px;
+  border-radius: 2px;
+  border: 0;
+  outline: 0;
+  font-weight: 700;
+  background-color: var(--main-color, $main-color);
+  color: var(--dark-color-f1, $dark-color-f1);
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(0.9);
+}
+body {
+  height: 100vh;
+}
+// ====== GOLOBAL-STYLES =====>
+
+// ====== HEADER =====>
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  height: 80px;
+  background-color: var(--dark-color-f1, $dark-color-f1);
+  .mode {
+    color: $main-color;
+    display: flex;
+    input {
+      margin: 0 20px;
+      /* remove standard background appearance */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      /* create custom radiobutton appearance */
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      padding: 2px;
+      /* background-color only for content */
+      background-clip: content-box;
+      border: 2px solid var(--light-color, $light-color);
+      background-color: var(--light-color, $light-color);
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .inp-active {
+      background-color: var(--main-color, $main-color);
+    }
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    img {
+      width: 50px;
+    }
+  }
+}
+// ====== HEADER =====>
+
+// ====== FORM =====>
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--main-color, $main-color);
+  position: absolute;
+  width: 400px;
+  left: -100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  padding: 30px;
+  border-radius: 5px;
+  gap: 20px;
+  span {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  p {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  &[mess="false"] p {
+    background-color: var(--red-color-dark, $red-color-dark);
+    color: var(--white-color, $white-color);
+  }
+  &[mess="true"] p {
+    background-color: var(--green-color, $green-color);
+    color: var(--white-color, $white-color);
+  }
+  &[mess="norm"] p {
+    background-color: var(--dark-color-f1, $dark-color-f1);
+    color: var(--main-color, $main-color);
+  }
+  .info-appender-ele {
+    max-height: 400px;
+    overflow: auto;
+    padding: 0 10px;
+  }
+  input,
+  select {
+    width: 100%;
+    padding: 10px 30px;
+    border: 0;
+    outline: 0;
+    border-radius: 2px;
+    font-size: 1.1em;
+    margin: 10px 0;
+  }
+  button {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    background-color: var(--dark-color-f1, $dark-color-f1);
+    color: var(--white-color, $white-color);
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}
+.active-form {
+  left: 50%;
+}
+// ====== FORM =====>
+
+// ====== TABLE =====>
+.table {
+  margin: 0px auto;
+  margin-top: 60px;
+  padding: 50px;
+  width: 90%;
+  background-color: var(--dark-color-f1, $dark-color-f1);
+  border-radius: 10px;
+  overflow: auto;
+  position: relative;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    h1 {
+      color: var(--main-color, $main-color);
+    }
+    > :last-child {
+      button {
+        font-size: 1.1em;
+      }
+      > :nth-child(2) {
+        background-color: var(--red-color-dark, $red-color-dark);
+        color: var(--white-color, $white-color);
+      }
+      #std-info-btn{
+        display: none;
+      }
+    }
+  }
+  .valid-mess {
+    padding: 16px;
+    font-weight: 500;
+    width: 400px;
+    border-radius: 4px;
+    text-align: center;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--main-color, $main-color);
+  }
+  &[mess="none"] .valid-mess {
+    top: -100%;
+  }
+  &[mess="false"] .valid-mess {
+    top: 7%;
+    background-color: var(--red-color-dark, $red-color-dark);
+  }
+  &[mess="true"] .valid-mess {
+    top: 7%;
+    background-color: var(--green-color, $green-color);
+  }
+  &[mess="warn"] .valid-mess {
+    width: 400px;
+    top: 7%;
+    background-color: var(--warn-color, $warn-color);
+    div {
+      padding: 10px;
+    }
+    button {
+      margin: 10px 20px;
+    }
+    :last-child {
+      background-color: var(--red-color-dark, $red-color-dark);
+      color: var(--white-color, $white-color);
+    }
+  }
+  .std-slide {
+    color: var(--main-color, $main-color);
+    font-weight: 900;
+    cursor: pointer;
+    .content {
+      height: 40px;
+      overflow: hidden;
+      margin: 40px 0;
+      padding: 10px;
+      color: var(--dark-color-f1m, $dark-color-f1);
+      background-color: var(--light-color, $light-color);
+      border-radius: 5px;
+      border-bottom: 0.1px solid var(--gray-color-f1, $gray-color-f1);
+      .slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        span {
+          transform: rotate(180deg);
+        }
+      }
+      .std-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 30px;
+        padding: 20px;
+        font-weight: 400;
+        color: var(--dark-color-f1m, $dark-color-f1);
+        font-weight: 500;
+        width: 100%;
+
+        %inp-select-group {
+          padding: 10px 30px;
+          outline: 0;
+          border: 0;
+          font-weight: 700;
+          border-radius: 2px;
+          background-color: var(--gray-color-f2, $gray-color-f2);
+          width: 250px;
+        }
+        > div {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span {
+            color: var(--gray-color-f1, $gray-color-f1);
+          }
+          input,
+          select {
+            @extend %inp-select-group;
+          }
+          .btn {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: flex-end;
+            button {
+              font-size: 1.1em;
+              padding: 10px 40px;
+            }
+            > :first-child {
+              background-color: var(--green-color, $green-color);
+              color: var(--white-color, $white-color);
+            }
+            > :last-child {
+              background-color: var(--red-color-dark, $red-color-dark);
+              color: var(--white-color, $white-color);
+            }
+          }
+        }
+      }
+    }
+    .active-slide {
+      height: 700px;
+      .slide {
+        span {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}
+// ====== TABLE =====>
+
+// ====== CONTROLLS - BANNEL =====>
+
+.controlls-pannel {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0px;
+  background-color: var(--dark-color-f1, $dark-color-f1);
+  padding: 30px;
+  font-size: 1rem;
+  color: var(--white-color, $white-color);
+  span {
+    color: var(--main-color, $main-color);
+    margin: 20px;
+  }
+  .search {
+    display: flex;
+    gap: 10px;
+    select,
+    input {
+      outline: 0;
+      border: 0;
+      padding: 10px 30px;
+      border-radius: 2px;
+    }
+  }
+}
+// ====== CONTROLLS - BANNEL =====>

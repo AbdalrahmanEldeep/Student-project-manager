@@ -1,0 +1,134 @@
+@use "./main" as *;
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .controlls-pannel {
+    width: 40%;
+    height: 100%;
+    left: -100%;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 40px;
+    .search {
+      width: 100%;
+      flex-direction: column;
+      input,
+      select {
+        width: 100%;
+      }
+    }
+  }
+  .table {
+    .head {
+      #std-info-btn {
+        display: inline-block !important;
+      }
+    }
+  }
+  form {
+    button {
+      padding: 10px;
+      margin: 0;
+    }
+    .info-appender-ele {
+      max-height: 65%;
+    }
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 500px) {
+  .table {
+    width: 100%;
+    height: calc(100% - 80px);
+    margin: 0;
+    border-radius: 0;
+    .head {
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      h1 {
+        font-size: 1.7rem;
+      }
+      > :last-child {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background-color: var(--dark-color-f1, $dark-color-f1);
+        z-index: 300;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        button {
+          font-size: 1em;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+  .controlls-pannel {
+    width: 60%;
+    height: 50%;
+    font-size: 0.8rem;
+    span {
+      margin: 10px;
+    }
+  }
+  form {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    border-radius: 0;
+  }
+  .std-slide {
+    color: var(--main-color, $main-color);
+    font-weight: 900;
+    cursor: pointer;
+    .content {
+      height: 40px;
+      overflow: hidden;
+      margin: 40px 0;
+      padding: 10px;
+      color: var(--dark-color-f1m, $dark-color-f1);
+      background-color: var(--light-color, $light-color);
+      border-radius: 5px;
+      border-bottom: 0.1px solid var(--gray-color-f1, $gray-color-f1);
+      .slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        span {
+          transform: rotate(180deg);
+        }
+      }
+      .std-info {
+        > div {
+          flex-direction: column;
+          align-items: flex-start !important;
+          label {
+            padding: 10px;
+            width: 60% !important;
+            background-color: var(--dark-color-f2, $dark-color-f2);
+            color: var(--gray-color-f2, $gray-color-f2);
+            margin-bottom: 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .active-slide {
+      height: 1060px !important;
+    }
+    .btn {
+      justify-content: center !important;
+      button {
+        font-size: 1.1em !important;
+        padding: 5px 30px !important;
+      }
+    }
+  }
+}

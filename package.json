@@ -1,0 +1,12 @@
+{
+  "name": "administration_st_project",
+  "version": "0.0.1",
+  "description": "Students Project",
+  "main": "src/Modules/main/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Abdalrhman Eldip",
+  "license": "ISC"
+}
